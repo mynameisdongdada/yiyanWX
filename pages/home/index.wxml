@@ -1,0 +1,43 @@
+
+<form reportSubmit bindsubmit="toTopHandler">
+    <button formType="submit">
+    </button>
+</form>
+<swiper autoplay class="header_image">
+        <swiper-item wx:for="{{lunbList}}" wx:for-item="images" wx:key="id">
+            <image mode="widthFix" src="{{images.link}}" style="width:100%;"></image>
+        </swiper-item>
+    </swiper>
+    <view class="header_text">
+        <text>幻想宇宙</text>
+    </view>
+    <view class="first_card" hoverClass="hover-class">
+        <form bindsubmit="addPushHandler" data-item="{{text.uuid}}">
+            <button formType="submit">
+                <view class="first_title_box">
+                    <text>{{text.collection}}</text>
+                </view>
+                <view class="first_content_box">
+                    <text>{{todaytext}}</text>
+                </view>
+                <view class="first_author_box">
+                    <text>— {{text.author}}</text>
+                </view>
+            </button>
+        </form>
+    </view>
+    <view  class='parent_style'>
+    <view wx:for="{{testList}}" wx:for-item="itemName" class="other_card" hoverClass="hover-class">
+        <form  bindsubmit="addPushHandler" data-item="{{itemName.uuid}}">
+            <button formType="submit">
+                <view class="other_title_box">
+                  「{{itemName.collection}}」
+                </view>
+                <view class="other_content_box">
+                    <text>{{itemName.todaytext}}</text>
+                </view>
+            </button>
+        </form>
+    </view>
+     <menu class='big_son_style' bindmenuItemClick="menuItemClick" mainmodel="{{mainmodel}}" menulist ="{{menulist}}" ></menu>
+</view>

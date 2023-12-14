@@ -1,0 +1,14 @@
+<view bindtap="goBackHandler">
+                <image class="leftButton" src="/assets/fanhui.png"></image>
+</view>
+<view style="padding-top: 100rpx;text-align: center;">隐私保护指引摘要</view>
+<view  style="padding-top:100rpx">更新时间：2023年12月12日</view>
+<view>生效时间：2023年12月12日</view>　
+<view style="padding-top:50rpx">　　　为了保护您的隐私权限，特在此进行声明，我方不会收集您的任何信息，但是需要使用到相关功能，如果担心隐私泄露请禁止允许使用。</view>
+<view>以下场景会用到您的隐私功能：</view>
+<view  style="padding-top: 50rpx">　　　业务场景一：当前天气</view>
+<view>　　　使用到的功能：定位信息</view>
+<view style="padding-top: 20rpx">　　　业务场景二：一键复制</view>
+<view>　　　使用到的功能：剪切板保存</view>
+<view style="padding-top: 20rpx">　　　业务场景三：图片预览</view>
+<view>　　　使用到的功能：媒体保存</view>

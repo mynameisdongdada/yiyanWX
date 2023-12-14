@@ -1,0 +1,76 @@
+<view wx:if='{{xianshi === true}}'>
+<view class="title">
+                <text>HOME</text>
+</view>
+<add-tips />
+<view class="container">
+  <view class='time'>
+    <text class='text1'>{{time3}} </text>
+    <text style='font-size:30rpx'>{{time2}}.{{time}}</text>
+    <text class='weather2'>{{citys}}{{weathers}}{{temperatures}}</text>
+  </view>
+    <view style='width:100%' class='imgls'>
+    <image style='width:100%' class='imgurls2' src='{{imgurls}}'></image>
+    <image  wx:if='{{bofang == false}}' class='icon-before' src='../img/before.png' bindtap='bindBefore'></image>
+    <image  wx:if='{{bofang == false}}' src="{{pauseStatus === false ? '../../assets/img/pause.png' : '../../assets/img/play.png'}}" class="icon-play" bindtap="bindTapPlay">
+    </image>
+    <image wx:if='{{bofang == false}}' class='icon-next' src='../img/next.png' bindtap='bindNext'></image>
+    <image wx:if='{{pauseStatus == false}}' src='../../assets/img/huojian.gif' class='huojian'></image>
+  </view>
+  <image wx:if='{{bofang == false}}' class='search_no1'  bindtap='shipin' src='http://cdn.jay1983.cn/%E5%88%87%E6%8D%A2.png'></image>
+  <view wx:if='{{bofang == true}}' class='search_no' style='font-size:32rpx' ></view>
+    <view class="con">
+        <view animation="{{animationData}}" class="text" id="text">
+            <view hidden="{{textstatus}}">
+              {{text}}
+      </view>
+        </view>
+        <view class="textfrom" id="textfrom">
+        - {{textfrom}} -
+    </view>
+    </view>
+</view>
+ <view animation="{{HistoryAnimation}}" class="HistoryPlan">
+        <view class="title" style='height:25rpx'>—  首句固定 所以不记录  —</view>
+        <scroll-view scrollY class="historyview" scrollTop="{{scroll_loc}}" style="height:80%;">
+            <view class="HistoryList" wx:for="{{HistoryList}}">
+                <view>{{item}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <icon animation="{{HistoryBtnAnimation}}" bindtap="historybtn" class="HistoryBtn" size="29px"  type="{{HistoryBtn_type}}"></icon>
+</view>
+<view>
+<view wx:if='{{xianshi === false}}'>
+<view class="title">
+                <text>首页</text>
+</view>
+<view class="videotext">
+  <text class='videotext1' bindtap='goto_logsshipin'>「更换」</text>
+  <text class='videotext2'>#VIDEO#</text>
+</view>
+<view class="page-body">
+  <video id="myVideo" class="myVideo" src="{{video}}" binderror="videoErrorCallback" direction='0' show-center-play-btn="{{true}}"  autoplay="{{true}}" loop="{{false}}"></video>
+</view>
+<image class='week' bindtap='tuwen' src='http://cdn.jay1983.cn/%E5%88%87%E6%8D%A2.png'></image>
+<view class="con" style='margin-top:45rpx'>
+        <view animation="{{animationData}}" class="text" id="text">
+            <view hidden="{{textstatus}}">
+        {{text}}
+      </view>
+        </view>
+        <view class="textfrom" id="textfrom">
+        - {{textfrom}} -
+    </view>
+    </view>
+     <view animation="{{HistoryAnimation}}" class="HistoryPlan">
+        <view class="title" style='height:25rpx'>—  首句固定 所以不记录  —</view>
+        <scroll-view scrollY class="historyview" scrollTop="{{scroll_loc}}" style="height:80%;">
+            <view class="HistoryList"   wx:for="{{HistoryList}}">
+                <view>{{item}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    </view>
+    <icon animation="{{HistoryBtnAnimation}}" bindtap="historybtn" class="HistoryBtn" size="29px"  type="{{HistoryBtn_type}}"></icon>
+</view>

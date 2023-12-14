@@ -1,0 +1,7 @@
+<view bindtap="goBackHandler">
+                <image class="leftButton" src="/assets/fanhui.png"></image>
+</view>
+<view class="title">
+                <text>保存小程序二维码</text>
+</view>
+<image class='imgs1' src='http://cdn.jay1983.cn/erweima_fenx.jpg' data-src="http://cdn.jay1983.cn/erweima_fenx.jpg" bindtap="previewImage"></image>

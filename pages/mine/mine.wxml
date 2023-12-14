@@ -1,0 +1,33 @@
+<view class="title">
+                <text>MINE</text>
+</view>
+
+<view class='bottom-layout'>
+<!--顶部轮播图  -->
+<swiper indicator-dots="true" autoplay="true" interval='3000' indicator-active-color="red" circular="true" class='lunbo'>
+  <swiper-item>
+    <image class='top-img' src='http://cdn.jay1983.cn/lunboo01.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image class='top-img' src='http://cdn.jay1983.cn/lunboo02.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image class='top-img' src='http://cdn.jay1983.cn/lunboo03.jpg'></image>
+  </swiper-item>
+</swiper>
+<view class='tiaozhuan'>
+  <view class='item-laypout'>
+    <navigator style='width:100%' target="miniProgram" open-type="navigate" app-id="wxf9177066b3c7b71a"  version="release">过往城市足迹
+    </navigator>
+    <image class='tubiao' src='../img/gengduo.png'></image>
+  </view>
+  <view class='item-laypout'>
+    <navigator class='search_no' style='width:100%' url='/pages/tuijian/tuijian'>推荐给朋友</navigator>
+    <image class='tubiao' src='../img/gengduo.png'></image>
+  </view>
+  <view class='item-laypout'>
+    <navigator class='search_no1'  style='width:100%' url='/pages/guanyu/guanyu'>关于</navigator>
+    <image class='tubiao' src='../img/gengduo.png'></image>
+  </view>
+</view>
+</view>

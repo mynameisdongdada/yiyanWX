@@ -1,0 +1,48 @@
+<view class="background"></view>
+<form reportSubmit bindsubmit="addPushHandler">
+    <button formType="submit">
+        <view class="navigator" style="padding-top:{{STATUSBAR_HEIGHT}}px;">
+            <view bindtap="goBackHandler" class="leftButton" hoverClass="hover-class">
+                <image src="/assets/back.svg"></image>
+            </view>
+            <view class="title">
+                <text>设置</text>
+            </view>
+        </view>
+    </button>
+</form>
+<view class="container" style="padding-top: {{STATUSBAR_HEIGHT+44}}px;">
+    <view class="card-box">
+        <form reportSubmit bindsubmit="openSourceHandler">
+            <button formType="submit">
+                <view class="card-cell" hoverClass="hover-class">
+                    <view class="cell-icon">
+                        <image src="/assets/github.svg"></image>
+                    </view>
+                    <view class="cell-title">
+                        <text>赏心悦目</text>
+                    </view>
+                    <view class="cell-action">
+                        <image src="/assets/go.svg"></image>
+                    </view>
+                </view>
+            </button>
+        </form>
+        <view class="separator"></view>
+        <form reportSubmit bindsubmit="addPushHandler">
+            <button formType="submit" openType="contact">
+                <view class="card-cell" hoverClass="hover-class">
+                    <view class="cell-icon">
+                        <image src="/assets/message.svg"></image>
+                    </view>
+                    <view class="cell-title">
+                        <text>建议反馈</text>
+                    </view>
+                    <view class="cell-action">
+                        <image src="/assets/go.svg"></image>
+                    </view>
+                </view>
+            </button>
+        </form>
+    </view>
+</view>

@@ -1,0 +1,22 @@
+<!--components/menu/menu.wxml-->
+<view class='menu_box'>
+    <view hidden='{{showmenus}}' class=''>
+    <block>
+      <view class='menu_main'  bindtap="bindTapPlay">
+        <image class='menu_img' src='../../images/music.png' />
+        <text class='menu_title'  hidden='{{mainmodel.title.length > 0 ? flase:true}}'>你听</text>
+      </view>
+    </block>
+        <block>
+      <view class='menu_main' bindtap="viewImageHandler" data-url="{{imgurl}}">
+        <image class='menu_img' src='../../images/top.png' />
+        <text class='menu_title'  hidden='{{mainmodel.title.length > 0 ? flase:true}}'>一文</text>
+      </view>
+    </block>
+    </view>
+    <view catchtap='showclick' class='menu_main'>
+      <image class='menu_img' src='{{mainmodel.url}}' />
+      <text class='menu_title' hidden='{{mainmodel.title.length > 0 ? flase:true}}'>{{mainmodel.title}}</text>
+    </view>
+</view>
+

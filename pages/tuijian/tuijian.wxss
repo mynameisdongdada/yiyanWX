@@ -1,0 +1,43 @@
+/* pages/fenxiang/fenxiang.wxss */
+.imgs1{   
+  width: 750rpx;
+  height: 1420rpx;
+}  
+.leftButton {
+  height: 60rpx;
+  width: 50rpx;
+  padding-top: 102rpx;
+}
+.guanggao{
+  margin-top: 30rpx;
+}
+.w1{
+  margin-top: -183rpx;
+}
+page{
+  background-color: #fbfbfb;
+}
+.modemeg{
+  border: 2rpx solid white;
+  color: white;
+  width: 200rpx;
+  font-size: 50rpx;
+  margin-left: 280rpx;
+  border-radius: 16rpx;
+}
+.img2{
+  width: 381rpx;
+}
+.title {
+    height: 135rpx;
+    margin-left: 0rpx;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: -111rpx;
+}
+.ad{
+  margin-top: -179rpx;
+}

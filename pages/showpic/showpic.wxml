@@ -1,0 +1,18 @@
+<view class="container">
+    <form reportSubmit bindsubmit="toTopHandler">
+        <button formType="submit">
+            <view class="navigator" style="padding-top:{{STATUSBAR_HEIGHT}}px;background-color: rgba(3, 169, 244, {{opacity}});">
+                <view bindtap="goHomeHandler" class="leftButton" hoverClass="hover-class" wx:if="{{IS_SHARE_PAGE}}">
+                    <image src="/assets/home.svg"></image>
+                </view>
+                <view bindtap="goBackHandler" class="leftButton" hoverClass="hover-class" wx:else>
+                    <image src="/assets/back.svg"></image>
+                </view>
+                <view class="title">
+                    <text>{{data.title}}</text>
+                </view>
+            </view>
+        </button>
+    </form>
+    <image mode="aspectFill" src="{{pic}}" style="height: 100%; width: 100%;"></image>
+</view>

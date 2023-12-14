@@ -1,0 +1,36 @@
+<view class="container">
+    <loading bindchange="loadingChange" hidden="{{loadingHidden}}">加载中...</loading>
+    <form reportSubmit bindsubmit="toTopHandler">
+        <button formType="submit">
+            <view class="navigator" style="padding-top:{{STATUSBAR_HEIGHT}}px;background-color: rgba(3, 169, 244, {{opacity}});">
+                <view class="leftButton" hoverClass="hover-class" wx:if="{{IS_SHARE_PAGE}}">
+                    <image src="/assets/home.svg"></image>
+                </view>
+                <view bindtap="goBackHandler" class="leftButton" hoverClass="hover-class" wx:else>
+                    <image src="/assets/back.svg"></image>
+                </view>
+                <view class="title">
+                    <text>{{data.title}}</text>
+                </view>
+            </view>
+        </button>
+    </form>
+    <scroll-view bindscrolltolower="onBindscrolltolower" scrollY="true" style="height: 100%; background-color: #FFF;">
+        <view class="item-container" wx:for="{{girlData}}" wx:for-item="girlInfo">
+            <view class="iamge-item-container">
+                <image bindtap="onImageClick" class="image" id="{{girlInfo[0].url}}" mode="aspectFill" src="{{girlInfo[0].url}}"></image>
+                <view class="tips-container">
+                    <text style="flex: 1;">{{girlInfo[0].desc}}</text>
+                    <text>via：{{girlInfo[0].who}}</text>
+                </view>
+            </view>
+            <view class="iamge-item-container">
+                <image bindtap="onImageClick" class="image" id="{{girlInfo.length==2?girlInfo[1].url:''}}" mode="aspectFill" src="{{girlInfo.length==2?girlInfo[1].url:''}}"></image>
+                <view class="tips-container">
+                    <text style="flex: 1;">{{girlInfo.length==2?girlInfo[1].desc:''}}</text>
+                    <text>via：{{girlInfo.length==2?girlInfo[1].who:''}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

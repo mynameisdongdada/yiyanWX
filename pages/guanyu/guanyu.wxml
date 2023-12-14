@@ -1,0 +1,25 @@
+<view bindtap="goBackHandler">
+                <image class="leftButton" src="/assets/fanhui.png"></image>
+</view>
+<view style='width:100%'><image class='imgs' src='http://cdn.jay1983.cn/toux_yuan.jpg'></image></view>
+<view class='text1'>V2.0.0</view>
+<view>企鹅：30950871</view>
+<view>微信：weifushaonian</view>
+<view>简介：</view>
+<view></view>　
+<view>　　　我有一个计划，我突然想起来你们每天那么累的工作，挣不了多少钱，想出去玩还没时间，真的太痛苦了。</view>
+<view>　　　所以...</view>
+<view>　　　我计划开个超市，没有办公室政治，让你们天天和喜欢的东西打交道。</view>
+<view>　　　每天都能看到形形色色的人，不用过多的社交，做四休三，五险一金，还有寒暑假。</view>
+<view>　　　不过你们要等我，等我努力攒钱，给你们建立一个，你们喜欢的世界。</view>
+<view></view>　
+<view>版本更新：</view>
+<view>　　　V2.0.0小程序名称更改，UI布局重构。</view>
+<view>　　　V1.5.0不再重复显示语录，增加统计文字按钮。</view>
+<view>　　　V1.4.0增加页面列表化显示文字，并显示农历日期。</view>
+<view>　　　V1.3.0首页增加视频元素，修复显示问题。</view>
+<view>　　　V1.2.0首页增加声音元素，修复小型机显示BUG。</view>
+<view>　　　V1.1.0文字简单化，位置天气展示，当天日期。</view>
+<view class='text2' style='font-size:30rpx;color:gray'>「此刻，我只做有趣和快乐的事、只做真正热爱、由衷喜欢之事，以我的方式，以我的节奏。」</view>
+<view class='text3' style='font-size:30rpx;color:gray'>— 卓别林</view>
+<view class="section_text"> <navigator url='/pages/yinsi/yinsi'>《隐私保护指引摘要》</navigator></view>

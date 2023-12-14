@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "治愈Every",
+    "usingComponents": {
+      "menu": "/components/menu/menu"
+    }
+}

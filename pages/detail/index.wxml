@@ -1,0 +1,77 @@
+<include src="../../libs/weToast/weToast.wxml"></include>
+<view class="background"></view>
+<vpush-view bindclickHandler="toTopHandler">
+  <view class="navigator" style="padding-top:{{STATUSBAR_HEIGHT}}px;background-color: rgba(3, 169, 244, {{opacity}});">
+    <view bindtap="goHomeHandler" class="leftButton" hoverClass="hover-class" wx:if="{{IS_SHARE_PAGE}}">
+      <image src="/assets/home.svg"></image>
+    </view>
+    <view bindtap="goBackHandler" class="leftButton" hoverClass="hover-class" wx:else>
+      <image src="/assets/back.svg"></image>
+    </view>
+    <view class="title">
+      <text>Every</text>
+    </view>
+  </view>
+</vpush-view>
+<scroll-view scrollWithAnimation scrollY bindscroll="scrollHandler" scrollTop="{{SCROLL_TOP}}" style="height:{{HEIGHT}}px;">
+  <vpush-view bindtap="viewImageHandler" data-url="{{uuidData.chunbj}}">
+    <image class="header_image" src="{{uuidData.chunbj}}"></image>
+  </vpush-view>
+  <view class="container">
+    <view class="body">
+      <view class="pic_author">
+        <text style="color:#4169E1;padding-right:30rpx" bindtap='thecopy'>「一键复制」</text>
+        <text>|</text>
+        <text style="color:#4169E1;padding-left: 24rpx;" bindtap="viewImageHandler" data-url="{{uuidData.image}}">「图文预览」</text>
+      </view>
+      <view class="date">
+        <text class="day">{{uuidData.today01}}</text>
+        <text class="other">{{uuidData.tomonth}} / {{uuidData.toyear}}</text>
+      </view>
+      <form  bindlongpress="copyHandler" bindsubmit="addPushHandler">
+        <button  class="content" formType="submit">
+          <text>{{theneirong}}</text>
+        </button>
+      </form>
+      <view class="author">
+        <text>— {{uuidData.author}}</text>
+      </view>
+      <view class="action">
+      <!--
+        <button wx:if='{{zhuanfa === false}}' class="action-cell-button" bindtap='bindBefore'>
+          <view class="cell-icon">
+            <image src="/assets/shangyishou.png"></image>
+          </view>
+          <view class="cell-title">
+            <text>Before</text>
+          </view>
+        </button>-->
+         <button wx:if='{{zhuanfa === false}}' class="action-cell-button" bindtap='bindTapPlay'>
+          <view class="cell-icon">
+            <image src="{{pauseStatus === false ? '../../assets/zanting.png' : '../../assets/bofang.png'}}"></image>
+          </view>
+          <view class="cell-title">
+            <text>Play/Pause</text>
+          </view>
+        </button>
+          <!--
+         <button wx:if='{{zhuanfa === false}}'  class="action-cell-button" bindtap='bindNext'>
+          <view class="cell-icon">
+            <image src="/assets/xiayishou.png"></image>
+          </view>
+          <view class="cell-title">
+            <text>Next</text>
+          </view>
+        </button>-->
+        <button wx:if='{{zhuanfa === true}}'  class="action-cell-button" open-type='share' bindtap='zhuanfa'>
+          <view class="cell-icon">
+            <image src="/assets/zhuanfa.png"></image>
+          </view>
+          <view class="cell-title">
+            <text>转发</text>
+          </view>
+        </button>
+      </view>
+    </view>
+  </view>
+</scroll-view>
