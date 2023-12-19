@@ -168,16 +168,25 @@ Page({
        /**this.onPullDownRefresh() */
     },
     onShow: function() {
+      var t=this;
       console.log('onShow');
-      D.isWorkTurn = 0 != t.globalData.workTurnType.length, D.workTurnTypeName = t.globalData.workTurnTypeName,
-        D.workTurnTypeArr = [];
-      for (var a = t.globalData.workTurnType.split(" "), r = 0; r < a.length; ++r) "" != a[r] && D.workTurnTypeArr.push(a[r]);
-      d(), i(), this.setData({
-        isWorkTurn: D.isWorkTurn,
-        workTurnTypeName: D.workTurnTypeName,
-        workTurnTypeArr: D.workTurnTypeArr,
-        workTurnData: D.workTurnData,
-        detailData: D.detailData
+      wx.request({
+        url: 'https://www.jay1983.cn/queryAllText',
+        success:function(req){
+          var lunbList= req.data.details;
+          var text=req.data.text;
+          var todaytext= text.todaytext.replace(/\\n/g,'\n');
+          var testList= req.data.testList;
+          for(var i=0;i<testList.length;i++){
+            testList[i].todaytext=testList[i].todaytext.replace(/\\n/g,'\n');
+          }
+          t.setData({
+            lunbList:lunbList,
+            text:text,
+            todaytext:todaytext,
+            testList:testList
+          });
+        }
       });
     },
     onHide: function() {},

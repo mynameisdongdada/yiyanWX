@@ -293,6 +293,9 @@ Page({
       imageUrl: imgurl
     }
   },
+  onShow:function(){
+    console.log("首页onShow")
+  },
   onLoad: function () {
     //  获取本地存储存储audioIndex
     var audioIndexStorage = wx.getStorageSync('audioIndex');
