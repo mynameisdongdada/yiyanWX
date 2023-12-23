@@ -51,7 +51,7 @@
             <image src="{{pauseStatus === false ? '../../assets/zanting.png' : '../../assets/bofang.png'}}"></image>
           </view>
           <view class="cell-title">
-            <text>Play/Stop</text>
+            <text>Play/Pause</text>
           </view>
         </button>
           <!--

@@ -267,6 +267,7 @@ Page({
     //back.src = audioList[index].src;
     back.src=audioSrc;
     back.title = audioList[index].name;
+    back.coverImgUrl='http://cdn.jay1983.cn/fengmian.jpg';
     back.play();
     back.onPlay(() => {
       console.log("音乐播放开始");

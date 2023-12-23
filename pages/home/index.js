@@ -126,8 +126,9 @@ Page({
     },
  
     onLoad: function(t1) {
+      console.log('onLoad');
       var t=this;
-      var  themonth = util.formatTime2(new Date());
+     /*  var  themonth = util.formatTime2(new Date());
       var  theday = util.formatTime3(new Date());
       let time = util.formatDate4(new Date());
       var day1 = new Date();
@@ -142,7 +143,7 @@ Page({
       var Week = util.getDates(0, time);
       this.setData({
         Week:Week.week
-      }),
+      }), */
       wx.request({
         url: 'https://www.jay1983.cn/queryAllText',
         success:function(req){
@@ -168,26 +169,8 @@ Page({
        /**this.onPullDownRefresh() */
     },
     onShow: function() {
-      var t=this;
       console.log('onShow');
-      wx.request({
-        url: 'https://www.jay1983.cn/queryAllText',
-        success:function(req){
-          var lunbList= req.data.details;
-          var text=req.data.text;
-          var todaytext= text.todaytext.replace(/\\n/g,'\n');
-          var testList= req.data.testList;
-          for(var i=0;i<testList.length;i++){
-            testList[i].todaytext=testList[i].todaytext.replace(/\\n/g,'\n');
-          }
-          t.setData({
-            lunbList:lunbList,
-            text:text,
-            todaytext:todaytext,
-            testList:testList
-          });
-        }
-      });
+      this.onLoad();
     },
     onHide: function() {},
     onUnload: function() {},
@@ -198,9 +181,9 @@ Page({
 */
   onShareAppMessage: function () {
     return {
-      title: "那些努力的人啊 身上总是闪闪发光",
+      title: "祝你平安，假如就此永别的话，祝你永远平安！",
       path: 'pages/home/index',
-      imageUrl: "https://6d79-myapps-acfec7-1258045707.tcb.qcloud.la/672ee57bly1g12ovm9c70j20jg0obtjp.jpg?sign=8855ab2f543945264bea9c9b904773a9&t=1553656010"
+      imageUrl: "http://cdn.jay1983.cn/detailImage/wenzi20231209.jpg"
     }
   },
     addPushHandler: function(t1) {

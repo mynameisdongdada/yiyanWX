@@ -10,7 +10,7 @@ var time3 = '';
 var video = "";
 var random = Math.floor(Math.random() * 31);
 var autor = '网易云·热评';
-var autors='';
+var autors = '';
 var textare1 = "若要优美的嘴唇， 要讲亲切的话； 若要可爱的眼睛， 要看到别人的好处； 若要苗条的身材，把你的食物分给饥饿的人； 若要美丽的头发， 让小孩子一天抚摸一次你的头发； 若要优雅的姿势， 走路时要记住行人不止你一个。";
 var autor1 = "赫本";
 var textare2 = "一个人至少拥有一个梦想，有一个理由去坚强。心若没有栖息的地方，到哪里都是在流浪。";
@@ -266,8 +266,8 @@ Page({
     HistoryStatus: !1,
     HistoryBtn_type: "waiting",
     HistoryBtnAnimation: {},
-    bofang:true,
-    xianshi:true,
+    bofang: true,
+    xianshi: true,
     audioList: audioList,
     audioIndex: 0,
     pauseStatus: true,
@@ -275,7 +275,7 @@ Page({
     timer: '',
     currentPosition: 0,
     duration: 0,
-    video:video
+    video: video
   },
   //事件处理函数
   bindViewTap: function () {
@@ -293,35 +293,39 @@ Page({
       imageUrl: imgurl
     }
   },
-  onShow:function(){
+  onShow: function () {
     console.log("首页onShow")
+    this.onLoad();
   },
   onLoad: function () {
+    console.log("首页onLoad")
     //  获取本地存储存储audioIndex
     var audioIndexStorage = wx.getStorageSync('audioIndex');
     if (audioIndexStorage) {
-      this.setData({ audioIndex: audioIndexStorage })
+      this.setData({
+        audioIndex: audioIndexStorage
+      })
     };
     var that = this;
     var time = (util.formatTime(new Date()));
-    let time5= util.formatDate4(new Date());
+    let time5 = util.formatDate4(new Date());
     var Week = util.getDates(0, time5);
-    if (Week.week == "周四" || Week.week == "周五" || Week.week == "周六" || Week.week=="周日"){
+    if (Week.week == "周四" || Week.week == "周五" || Week.week == "周六" || Week.week == "周日") {
       this.setData({
         //bofang: false
       })
     }
     wx.request({
       url: 'https://www.jay1983.cn/isAudioFlag',
-      method:'POST',
-      success:function(req){
-        var uuidData= req.data.flag;
-        var bofang=true;
-        if('1'==uuidData){
-          bofang=false;
+      method: 'POST',
+      success: function (req) {
+        var uuidData = req.data.flag;
+        var bofang = true;
+        if ('1' == uuidData) {
+          bofang = false;
         }
         that.setData({
-          bofang:bofang
+          bofang: bofang
         });
       }
     });
@@ -329,7 +333,9 @@ Page({
 
     var time2 = util.formatTime2(new Date());
     time3 = util.formatTime3(new Date());
-    var myAmapFun = new amapFile.AMapWX({ key: '4aa02424e3f218b133fbf4f427714881' });
+    var myAmapFun = new amapFile.AMapWX({
+      key: '4aa02424e3f218b133fbf4f427714881'
+    });
     bottomwenzi = '';
     sheying = 'Ammsr';
     var that = this;
@@ -398,9 +404,8 @@ Page({
     if (random == '0') {
       textare = "你呢，是这辈子没故事，想拥有一段故事; 我呢，是故事太多，想给故事一个结局。";
       autor = "韩寒《飞驰人生》";
-      video = "https://6d79-myapps-acfec7-1258045707.tcb.qcloud.la/v0.mp4?sign=efd6ec581ce307713de2870d4926136b&t=1551321565";
     };
-   
+
     if (time3 == '01') {
       topwenzi = wenzi1;
       bottomwenzi = wenzi2;
@@ -413,13 +418,14 @@ Page({
       textare = textare1;
       autors = autor1;
       video = video1;
+      index = 1;
     };
     if (time3 == '02') {
       topwenzi = wenzi3;
       bottomwenzi = wenzi4;
       imgurl = imgurl2;
       sheying = sheying2;
-      index = 1;
+      index = 2;
       autor = "史黛菈·法米利昂《落第骑士英雄谭》";
       textare = textare2;
       autor = autor2;
@@ -433,7 +439,7 @@ Page({
       bottomwenzi = wenzi6;
       imgurl = imgurl3;
       sheying = sheying3;
-      index = 2;
+      index = 3;
       autor = "韩寒《后会无期》";
       textare = textare3;
       autors = autor3;
@@ -444,7 +450,7 @@ Page({
       bottomwenzi = wenzi8;
       imgurl = imgurl4;
       sheying = sheying4;
-      index = 3;
+      index = 4;
       autor = '七堇年《尘曲》';
       textare = textare4;
       autors = autor4;
@@ -456,7 +462,7 @@ Page({
       imgurl = imgurl5;
       sheying = sheying5;
       autor = "凯《火影忍者》";
-      index = 4;
+      index = 5;
       textare = textare5;
       autors = autor5;
       video = video5;
@@ -467,7 +473,7 @@ Page({
       imgurl = imgurl6;
       sheying = sheying6;
       autor = "林夕《如果你知我苦衷》";
-      index = 5;
+      index = 6;
       textare = textare6;
       autors = autor6;
       video = video6;
@@ -478,7 +484,7 @@ Page({
       imgurl = imgurl7;
       sheying = sheying7;
       autor = "《冯唐诗百首》";
-      index = 6;
+      index = 7;
       textare = textare7;
       autors = autor7;
       video = video7;
@@ -489,7 +495,7 @@ Page({
       imgurl = imgurl8;
       sheying = sheying8;
       autor = "《步步惊情》";
-      index = 7;
+      index = 8;
       textare = textare8;
       autors = autor8;
       video = video8;
@@ -500,7 +506,7 @@ Page({
       imgurl = imgurl9;
       sheying = sheying9;
       autor = "七堇年 《尘曲》";
-      index = 8;
+      index = 9;
       textare = textare9;
       autors = autor9;
       video = video9;
@@ -511,7 +517,7 @@ Page({
       imgurl = imgurl10;
       sheying = sheying10;
       autor = '澄澈';
-      index = 9;
+      index = 10;
       textare = textare10;
       autors = autor10;
       video = video10;
@@ -522,7 +528,7 @@ Page({
       imgurl = imgurl11;
       sheying = sheying11;
       autor = '原创';
-      index = 10;
+      index = 11;
       textare = textare11;
       autors = autor11;
       video = video11;
@@ -533,7 +539,7 @@ Page({
       imgurl = imgurl12;
       sheying = sheying12;
       autor = "席慕容";
-      index = 11;
+      index = 12;
       textare = textare12;
       autors = autor12;
       video = video12;
@@ -544,7 +550,7 @@ Page({
       imgurl = imgurl13;
       sheying = sheying13;
       autor = "原创";
-      index = 12;
+      index = 13;
       textare = textare13;
       autors = autor13;
       video = video13;
@@ -555,7 +561,7 @@ Page({
       imgurl = imgurl14;
       sheying = sheying14;
       autor = "宫崎骏《千与千寻》";
-      index = 13;
+      index = 14;
       textare = textare14;
       autors = autor14;
       video = video14;
@@ -566,7 +572,7 @@ Page({
       imgurl = imgurl15;
       sheying = sheying15;
       autor = "白落梅 《岁月静好 现世安稳》";
-      index = 14;
+      index = 15;
       textare = textare15;
       autors = autor15;
       video = video15;
@@ -577,7 +583,7 @@ Page({
       imgurl = imgurl16;
       sheying = sheying16;
       autor = '耳根《一念永恒》';
-      index = 15;
+      index = 16;
       textare = textare16;
       autors = autor16;
       video = video16;
@@ -588,7 +594,7 @@ Page({
       imgurl = imgurl17;
       sheying = sheying17;
       autor = "毕淑敏 《握紧你的右手》";
-      index = 16;
+      index = 17;
       textare = textare17;
       autors = autor17;
       video = video17;
@@ -599,7 +605,7 @@ Page({
       imgurl = imgurl18;
       sheying = sheying18;
       autor = '夏目贵志《夏目友人帐》';
-      index = 17;
+      index = 18;
       textare = textare18;
       autors = autor18;
       video = video18;
@@ -610,7 +616,7 @@ Page({
       imgurl = imgurl19;
       sheying = sheying19;
       autor = '《四月是你的谎言》';
-      index = 18;
+      index = 19;
       textare = textare19;
       autors = autor19;
       video = video19;
@@ -621,7 +627,7 @@ Page({
       imgurl = imgurl20;
       sheying = sheying20;
       autor = '原创';
-      index = 19;
+      index = 20;
       textare = textare20;
       autors = autor20;
       video = video20;
@@ -632,7 +638,7 @@ Page({
       imgurl = imgurl21;
       sheying = sheying21;
       autor = '《我在未来等你》';
-      index = 20;
+      index = 21;
       textare = textare21;
       autors = autor21;
       video = video21;
@@ -643,7 +649,7 @@ Page({
       imgurl = imgurl22;
       sheying = sheying22;
       autor = '《哆啦A梦》';
-      index = 21;
+      index = 22;
       textare = textare22;
       autors = autor22;
       video = video22;
@@ -654,7 +660,7 @@ Page({
       imgurl = imgurl23;
       sheying = sheying23;
       autor = '绿川幸《夏目友人帐》';
-      index = 22;
+      index = 23;
       textare = textare23;
       autors = autor23;
       video = video23;
@@ -665,7 +671,7 @@ Page({
       imgurl = imgurl24;
       sheying = sheying24;
       autor = '李白《秋风词》';
-      index = 23;
+      index = 24;
       textare = textare24;
       autors = autor24;
       video = video24;
@@ -676,7 +682,7 @@ Page({
       imgurl = imgurl25;
       sheying = sheying25;
       autor = '新海诚《秒速五厘米》';
-      index = 24;
+      index = 25;
       textare = textare25;
       autors = autor25;
       video = video25;
@@ -687,7 +693,7 @@ Page({
       imgurl = imgurl26;
       sheying = sheying26;
       autor = '安东尼·德·圣-埃克苏佩里《小王子》';
-      index = 25;
+      index = 26;
       textare = textare26;
       autors = autor26;
       video = video26;
@@ -698,7 +704,7 @@ Page({
       imgurl = imgurl27;
       sheying = sheying27;
       autor = '《一禅小和尚》';
-      index = 26;
+      index = 27;
       textare = textare27;
       autors = autor27;
       video = video27;
@@ -709,7 +715,7 @@ Page({
       imgurl = imgurl28;
       sheying = sheying28;
       autor = '尼采';
-      index = 27;
+      index = 28;
       textare = textare28;
       autors = autor28;
       video = video28;
@@ -720,7 +726,7 @@ Page({
       imgurl = imgurl29;
       sheying = sheying29;
       autor = 'Deca Joins《夜间独白》';
-      index = 28;
+      index = 29;
       textare = textare29;
       autors = autor29;
       video = video29;
@@ -731,7 +737,7 @@ Page({
       imgurl = imgurl30;
       sheying = sheying30;
       autor = '佚名';
-      index = 29;
+      index = 30;
       textare = textare30;
       autors = autor30;
       video = video30;
@@ -742,27 +748,41 @@ Page({
       imgurl = imgurl31;
       sheying = sheying31;
       autor = '玄色 《哑舍·零》';
-      index = 30;
+      index = 31;
       textare = textare31;
       autors = autor31;
       video = video31;
     }
-    this.setData({
-      textare: textare,
-      autor: autor,
-      autors: autors,
-      video: video,
-      time: time,
-      time2: time2,
-      time3: time3,
-      topwenzi: topwenzi,
-      bottomwenzi: bottomwenzi,
-      imgurls: imgurl,
-      sheyings: sheying,
-      autors: autor,
-      LOADING: !0,
-      SCROLL_TOP: 0
-    });
+    wx.request({
+      url: 'https://www.jay1983.cn/queryByOne',
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        uuid: index
+      },
+      success: function (req) {
+        imgurl = req.data.home.image;
+        video = req.data.home.video;
+        that.setData({
+          textare: textare,
+          autor: autor,
+          autors: autors,
+          video: video,
+          time: time,
+          time2: time2,
+          time3: time3,
+          topwenzi: topwenzi,
+          bottomwenzi: bottomwenzi,
+          imgurls: imgurl,
+          sheyings: sheying,
+          autors: autor,
+          LOADING: !0,
+          SCROLL_TOP: 0
+        });
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -779,9 +799,10 @@ Page({
       }
     }
   },
-  onReady:function(res){
+  onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo');
-    var t = this, i = 0;
+    var t = this,
+      i = 0;
     setInterval(function () {
       (i += .01) >= .5 && i < .51 && t.gethitokoto(), i >= 7.6 && t.repeatAn();
     }, 10), setInterval(function () {
@@ -819,8 +840,12 @@ Page({
         });
       }
     });
-  }, changetext: function () {
-    var t = this, i = t.data.temp_text, a = t.data.temp_textfrom, n = t.data.scroll_loc;
+  },
+  changetext: function () {
+    var t = this,
+      i = t.data.temp_text,
+      a = t.data.temp_textfrom,
+      n = t.data.scroll_loc;
     n += 50;
     var o = t.data.HistoryList;
     o.push(i + " -《" + a + "》"), t.setData({
@@ -837,7 +862,8 @@ Page({
     }, 100);
   },
   picRotate: function () {
-    var t = this, i = t.data.picRotate;
+    var t = this,
+      i = t.data.picRotate;
     i += 1, t.setData({
       picRotate: i
     });
@@ -877,19 +903,21 @@ Page({
   },
 
   picOut: function () {
-    var t = this, i = wx.createAnimation({
-      duration: 300,
-      timingFunction: "linear"
-    });
+    var t = this,
+      i = wx.createAnimation({
+        duration: 300,
+        timingFunction: "linear"
+      });
     t.data.musicpicAnimation = i, i.translateX(-300).step(), t.setData({
       musicpicAnimation: i.export()
     });
   },
   picEnter: function () {
-    var t = this, i = wx.createAnimation({
-      duration: 300,
-      timingFunction: "linear"
-    });
+    var t = this,
+      i = wx.createAnimation({
+        duration: 300,
+        timingFunction: "linear"
+      });
     t.data.musicpicAnimation = i, i.translateX(0).step(), t.setData({
       musicpicAnimation: i.export()
     });
@@ -899,7 +927,8 @@ Page({
     clearInterval(t.musicpicRotate);
   },
   historybtn: function () {
-    var t = this, i = t.data.HistoryStatus;
+    var t = this,
+      i = t.data.HistoryStatus;
     i ? (t.picEnter(), t.picRotate_start(), t.historyHidden(), t.setData({
       HistoryBtn_type: "waiting"
     })) : (t.picRotate_stop(), t.picOut(), t.historyShow(), t.setData({
@@ -931,19 +960,21 @@ Page({
     });
   },
   historyBtnRotate: function (t) {
-    var i = this, a = wx.createAnimation({
-      duration: 200,
-      timingFunction: "linear"
-    });
+    var i = this,
+      a = wx.createAnimation({
+        duration: 200,
+        timingFunction: "linear"
+      });
     i.data.HistoryBtnAnimation = a, a.rotateZ(t).step(), i.setData({
       HistoryBtnAnimation: a.export()
     });
   },
   historyBtnMove: function (t) {
-    var i = this, a = wx.createAnimation({
-      duration: 200,
-      timingFunction: "linear"
-    });
+    var i = this,
+      a = wx.createAnimation({
+        duration: 200,
+        timingFunction: "linear"
+      });
     i.data.HistoryBtnAnimation = a, a.translateX(t).step(), i.setData({
       HistoryBtnAnimation: a.export()
     });
@@ -972,177 +1003,29 @@ Page({
     console.log('视频错误信息:')
     console.log(e.detail.errMsg)
   },
-  goto_logsshipin:function(){
+  goto_logsshipin: function () {
+    var that=this;
     var random = Math.floor(Math.random() * 31);
     console.log('随机数' + random);
-    if (random == '0') {
-      video = video1;
-    };
-    if (random == "1") {
-      textare = textare1;
-      autor = autor1;
-      video = video1;
-    };
-    if (random == "2") {
-      textare = textare2;
-      autor = autor2;
-      video = video2;
-    };
-    if (random == "3") {
-      textare = textare3;
-      autor = autor3;
-      video = video3;
-    };
-    if (random == "4") {
-      textare = textare4;
-      autor = autor4;
-      video = video4;
-    };
-    if (random == "5") {
-      textare = textare5;
-      autor = autor5;
-      video = video5;
-    };
-    if (random == "6") {
-      textare = textare6;
-      autor = autor6;
-      video = video6;
-    };
-    if (random == "7") {
-      textare = textare7;
-      autor = autor7;
-      video = video7;
-    };
-    if (random == "8") {
-      textare = textare8;
-      autor = autor8;
-      video = video8;
-    };
-    if (random == "9") {
-      textare = textare9;
-      autor = autor9;
-      video = video9;
-    };
-    if (random == "10") {
-      textare = textare10;
-      autor = autor10;
-      video = video10;
-    };
-    if (random == "11") {
-      textare = textare11;
-      autor = autor11;
-      video = video11;
-    };
-    if (random == "12") {
-      textare = textare12;
-      autor = autor12;
-      video = video12;
-    };
-    if (random == "13") {
-      textare = textare13;
-      autor = autor13;
-      video = video13;
-    };
-    if (random == "14") {
-      textare = textare14;
-      autor = autor14;
-      video = video14;
-    };
-    if (random == "15") {
-      textare = textare15;
-      autor = autor15;
-      video = video15;
-    };
-    if (random == "16") {
-      textare = textare16;
-      autor = autor16;
-      video = video16;
-    };
-    if (random == "17") {
-      textare = textare17;
-      autor = autor17;
-      video = video17;
-    };
-    if (random == "18") {
-      textare = textare18;
-      autor = autor18;
-      video = video18;
-    };
-    if (random == "19") {
-      textare = textare19;
-      autor = autor19;
-      video = video19;
-    };
-    if (random == "19") {
-      textare = textare19;
-      autor = autor19;
-      video = video19;
-    };
-    if (random == "20") {
-      textare = textare20;
-      autor = autor20;
-      video = video20;
-    };
-    if (random == "21") {
-      textare = textare21;
-      autor = autor21;
-      video = video21;
-    };
-    if (random == "22") {
-      textare = textare22;
-      autor = autor22;
-      video = video22;
-    };
-    if (random == "23") {
-      textare = textare23;
-      autor = autor23;
-      video = video23;
-    };
-    if (random == "24") {
-      textare = textare24;
-      autor = autor24;
-      video = video24;
-    };
-    if (random == "25") {
-      textare = textare25;
-      autor = autor25;
-      video = video25;
-    };
-    if (random == "26") {
-      textare = textare26;
-      autor = autor26;
-      video = video26;
-    };
-    if (random == "27") {
-      textare = textare27;
-      autor = autor27;
-      video = video27;
-    };
-    if (random == "28") {
-      textare = textare28;
-      autor = autor28;
-      video = video28;
-    };
-    if (random == "29") {
-      textare = textare29;
-      autor = autor29;
-      video = video29;
-    };
-    if (random == "30") {
-      textare = textare30;
-      autor = autor30;
-      video = video30;
-    };
-    if (random == "31") {
-      textare = textare31;
-      autor = autor31;
-      video = video31;
-    };
-    this.setData({
-      textare: textare,
-      autor: autor,
-      video: video,
-      iiii:false
+    if(random=='0'){
+      random='1';
+    }
+    wx.request({
+      url: 'https://www.jay1983.cn/queryByOne',
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        uuid: random
+      },
+      success: function (req) {
+        video = req.data.home.video;
+        that.setData({
+          video: video,
+          iiii: false
+        });
+      }
     })
   },
   goto_logs: function () {
@@ -1150,7 +1033,7 @@ Page({
     if (random == '0') {
       topwenzi = '战争就是这样，';
       bottomwenzi = '双方都认为自己是好的一方。';
-      imgurl = 'https://6d79-myapps-acfec7-1258045707.tcb.qcloud.la/c03.jpg?sign=d97821df5ab8cf326eef54ebbcabc5f5&t=1556155709';
+      imgurl = imgurl1;
       sheying = 'sejkko';
       autor = "《哆啦A梦》";
     };
@@ -1389,45 +1272,74 @@ Page({
   bindNext: function () {
     console.log("下一首");
     if (index == 30) {
-      index = 0;
+      index = 1;
     } else {
       index++;
     }
     this.bindback();
-    this.setData({ pauseStatus: false })
+    this.setData({
+      pauseStatus: false
+    })
   },
   bindBefore: function () {
-    if (index == 0) {
+    if (index == 1) {
       index = 30;
     } else {
       index--;
     }
     console.log("上一首");
     this.bindback();
-    this.setData({ pauseStatus: false })
+    this.setData({
+      pauseStatus: false
+    })
   },
-  
+
   bindTapPlay: function () {
     if (this.data.pauseStatus === true) {
       this.bindback();
-      this.setData({ pauseStatus: false })
+      this.setData({
+        pauseStatus: false
+      })
     } else if (this.data.pauseStatus === false) {
       this.zanting();
-      this.setData({ pauseStatus: true })
+      this.setData({
+        pauseStatus: true
+      })
     }
   },
   bindback: function () {
-    let { audioList, audioIndex } = this.data;
+    var that = this;
+    let {
+      audioList,
+      audioIndex
+    } = this.data;
     const back = wx.getBackgroundAudioManager();
-    back.src = audioList[index].src;
-    back.title = audioList[index].name;
-    back.play();
-    back.onPlay(() => {
-      console.log("音乐播放开始");
-    })
-    back.onEnded(() => {
-      console.log("音乐播放结束");
-      this.setData({ pauseStatus: true });
+    //back.src = audioList[index].src;
+    console.log(index);
+    wx.request({
+      url: 'https://www.jay1983.cn/queryByOne',
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        uuid: index
+      },
+      success: function (req) {
+        back.src = req.data.home.audio;
+        back.title = audioList[index].name;
+        back.coverImgUrl = 'http://cdn.jay1983.cn/fengmian.jpg';
+        back.play();
+        back.onPlay(() => {
+          console.log("音乐播放开始");
+        })
+        back.onEnded(() => {
+          console.log("音乐播放结束");
+          that.setData({
+            pauseStatus: true
+          });
+        })
+      }
     })
   },
   zanting() {
@@ -1440,7 +1352,11 @@ Page({
   setDuration(that) {
     wx.getBackgroundAudioPlayerState({
       success: function (res) {
-        let { status, duration, currentPosition } = res
+        let {
+          status,
+          duration,
+          currentPosition
+        } = res
         if (status === 1 || status === 0) {
           that.setData({
             currentPosition: that.stotime(currentPosition),
@@ -1451,12 +1367,12 @@ Page({
       }
     })
   },
-  shipin:function(){
-      this.setData({
-        xianshi: false
-      })
+  shipin: function () {
+    this.setData({
+      xianshi: false
+    })
   },
-  tuwen:function(){
+  tuwen: function () {
     this.setData({
       xianshi: true
     })
@@ -1466,9 +1382,13 @@ Page({
     if (s > -1) {
       let min = Math.floor(s / 60) % 60;
       let sec = s % 60;
-      if (min < 10) { t += "0"; }
+      if (min < 10) {
+        t += "0";
+      }
       t += min + ":";
-      if (sec < 10) { t += "0"; }
+      if (sec < 10) {
+        t += "0";
+      }
       t += sec;
     }
     return t;

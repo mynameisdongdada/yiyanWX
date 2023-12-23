@@ -65,7 +65,7 @@ Component({
       back.src = music;
       
       console.log(music);
-      
+      back.coverImgUrl='http://cdn.jay1983.cn/fengmian.jpg';
       back.title = '作者是个小伙';
       back.play();
       back.onPlay(() => {
