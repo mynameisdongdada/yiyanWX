@@ -1327,7 +1327,7 @@ Page({
       },
       success: function (req) {
         back.src = req.data.home.audio;
-        back.title = audioList[index].name;
+        back.title = "作者是个小伙";
         back.coverImgUrl = 'http://cdn.jay1983.cn/fengmian.jpg';
         back.play();
         back.onPlay(() => {

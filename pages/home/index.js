@@ -144,6 +144,9 @@ Page({
       this.setData({
         Week:Week.week
       }), */
+      wx.showLoading({
+        title: '加载中',
+      });
       wx.request({
         url: 'https://www.jay1983.cn/queryAllText',
         success:function(req){
@@ -162,8 +165,8 @@ Page({
           });
         }
       });
-      wx.cloud.init();
-
+      wx.hideLoading();
+      //wx.cloud.init();
     },
     onReady: function() {
        /**this.onPullDownRefresh() */

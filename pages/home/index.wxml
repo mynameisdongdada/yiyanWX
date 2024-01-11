@@ -9,7 +9,7 @@
         </swiper-item>
     </swiper>
     <view class="header_text">
-        <text>幻想宇宙</text>
+        <text>[拥抱 拥有 守护]</text>
     </view>
     <view class="first_card" hoverClass="hover-class">
         <form bindsubmit="addPushHandler" data-item="{{text.uuid}}">
